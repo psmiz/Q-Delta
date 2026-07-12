@@ -47,4 +47,4 @@ Override the GPU set / count with `CUDA_VISIBLE_DEVICES=... NGPU=... bash <scrip
 
 ## Configs
 
-`configs/qdelta_{340M,1B}.json` hold the model hyperparameters. The query-gating bias is exposed as `lamb_bias` (default `0.8`) — edit the JSON to sweep.
+`configs/qdelta_{340M,1B}.json` hold the model hyperparameters. The query-gating bias is exposed as `lamb_bias` (default `0.9`) — edit the JSON to sweep.

@@ -181,7 +181,7 @@ class QDelta(nn.Module):
         conv_bias: bool = False,
         layer_idx: int = None,
         norm_eps: float = 1e-5,
-        lamb_bias: float = 0.0,
+        lamb_bias: float = 0.9,
         **kwargs
     ) -> QDelta:
         super().__init__()
@@ -349,7 +349,6 @@ class QDelta(nn.Module):
             q, k = map(lambda x: repeat(x, '... h d -> ... (h g) d', g=self.num_v_heads // self.num_heads), (q, k))
 
         beta = self.b_proj(hidden_states).sigmoid()
-        # lamb = self.lamb_proj(hidden_states).sigmoid()
         lamb = (self.lamb_proj(hidden_states) - self.lamb_bias).sigmoid()
         if self.allow_neg_eigval:
             beta = beta * 2.

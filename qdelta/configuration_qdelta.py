@@ -41,7 +41,7 @@ class QDeltaConfig(PretrainedConfig):
         fuse_linear_cross_entropy: bool = False,
         use_l2warp: bool = False,
         vocab_size: int = 32000,
-        lamb_bias: float = 0.0,
+        lamb_bias: float = 0.9,
         **kwargs
     ):
         self.attn_mode = attn_mode

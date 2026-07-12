@@ -19,5 +19,5 @@
     "use_cache": true,
     "use_gate": true,
     "use_short_conv": true,
-    "lamb_bias": 0.8
+    "lamb_bias": 0.9
 }
